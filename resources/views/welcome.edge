@@ -1,0 +1,21 @@
+@layout('layouts/main')
+@set('title', 'Home page')
+
+@section('content')
+<div class="container">
+  <h1>Upload de Pack</h1>
+  @if (flashMessages.has('success'))
+  <div class="alert alert-success">
+    {{ flashMessages.get('success') }}
+  </div>
+  @endif
+
+  <form action="{{ route('upload.site') }}" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="cover_image">Sélectionnez le fichier du pack</label>
+      <input type="file" name="cover_image" id="cover_image" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Envoyer</button>
+  </form>
+</div>
+@endsection

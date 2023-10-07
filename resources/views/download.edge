@@ -1,0 +1,13 @@
+@section('content')
+<div class="container">
+  <h1>Upload de Pack</h1>
+  @if (flashMessages.has('success'))
+  <div class="alert alert-success">
+    {{ flashMessages.get('success') }}
+  </div>
+  @endif
+
+  <p>Sha1 : {{ sha1 }}</p>
+  <a href="{{ link }}">Download link : {{ link }}</a>
+</div>
+@endsection
